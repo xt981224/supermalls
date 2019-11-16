@@ -1,11 +1,277 @@
+<!-- 分类组件1 -->
 <template>
-	<div>
-		<h2>分类</h2>
+	<div class="wrapper" ref="aaa">
+   <ul class="content">
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li><li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li><li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li><li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li><li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>1</li>
+     <li>1a</li>
+     <li>a1</li>
+     <li>a1</li>
+     <li>a1</li>
+     <li>a1</li><li>a</li>
+     <li>a1</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li><li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li><li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+     <li>a</li>
+   </ul>
 	</div>
 </template>
 
 <script>
+  // 滚动效果引入包 better-scroll
+  import BScroll from 'better-scroll'
+  export default {
+    name: 'category',
+    components: {
+    },
+    data(){
+      return {
+      scroll:null
+      }
+    },
+    mounted(){
+      // 滚动效果
+    this.scroll =  new BScroll(document.querySelector('.wrapper'),{
+      // 监册
+      probeType:1,
+      pullUpLoad:true
+      })
+      this.scroll.on('scroll',(position)=>{
+        console.log(position)
+      })
+      this.scroll.on('pullingUp',()=>{
+        console.log("价值")
+        // 先发送请求
+        // 请求完成后 将数据展现出来
+      })
+        // console.log(document.querySelector('.wrapper'));
+    },
+    }
 </script>
 
 <style>
+.wrapper{
+  height: 200px;
+  background-color: red;
+  overflow: hidden;
+  /* 超出部分为隐藏 */
+  /* overflow: scroll; */
+}
 </style>

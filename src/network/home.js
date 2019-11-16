@@ -1,4 +1,5 @@
-import {request} from './request'
+import {request} from './request';
+
 export function getHomeMultidata(){
 	return request({
 		url:'/home/multidata'
@@ -8,7 +9,7 @@ export function getHomeMultidata(){
 export function getHomeGoods(type,page){
 	return request({
 		url:'/home/data',
-		parsms:{
+		params:{
 			type,
 			page
 		}

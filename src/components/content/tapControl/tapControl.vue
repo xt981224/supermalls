@@ -1,18 +1,18 @@
 <!--选项卡-->
 <template>
 	<div class="tap-control">
-		<div v-for="(items,index) in titles" 
-			 class="tap-control-item" 
+		<div v-for="(items,index) in titles"
+			 class="tap-control-item"
 			 :class="{active:index ==cuarrindex}" @click="itemclick(index)">
 			<span>
 				{{items}}
 			</span>
 		</div>
-	
+
 	</div>
 </template>
 <script>
-	
+
 		export default {
 		name:'tapControl',
 		props:{
@@ -24,7 +24,7 @@
 			}
 		},
 		components:{
-		
+
 		},
 		data(){
 			return{
@@ -32,7 +32,8 @@
 			}
 		},methods:{
 			itemclick(index){
-				this.cuarrindex=index
+				this.cuarrindex=index;
+        this.$emit('tabclick',index)
 			}
 		}
 	}
@@ -46,6 +47,7 @@
 		height: 40px;
 		line-height: 40px;
 		background-color: #FFFFFF;
+    z-index: 1;
 	}
 	.tap-control-item{
 		flex: 1;
