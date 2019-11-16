@@ -1,3 +1,4 @@
+<!-- 滚动组件 -->
 <template>
   <div class="wrapper" ref="wrapper">
       <div class="content">
@@ -14,7 +15,8 @@
     name:'BetterScroll',
     data(){
       return {
-      scroll:null
+      scroll:null,
+      messgge:'asds'
       }
     },
     props:{
@@ -29,21 +31,22 @@
 
     },
  mounted(){
-          // 滚动效果
-        this.scroll =  new BScroll(this.$refs.wrapper,{
-          // 监册
+          // 1.滚动效果 创建scroll对象
+          this.scroll =  new BScroll(this.$refs.wrapper,{
+          //监册
           probeType:this.probeType,
           click: true,
           pullUpLoad:this.pullUpLoad
           })
+          //2. 实时监听滚动，来实现返回顶部按钮的功能
           this.scroll.on('scroll',(position)=>{
-            console.log(position)
+            // 将监听的数据坐标发射出去
+            this.$emit('scroll',position)
           })
-          // this.scroll.on('pullingUp',()=>{
-          //   console.log("价值")
-          //   // 先发送请求
-          //   // 请求完成后 将数据展现出来
-          // })
+          // 3.实现加载更多 监听上来事件
+          this.scroll.on('pullingUp',()=>{
+            this.$emit('pullingUp')
+          })
         },
   }
 </script>

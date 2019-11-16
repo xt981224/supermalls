@@ -15,7 +15,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	.fature img{
 		max-width: 100%;
 	}

@@ -5,7 +5,13 @@
 			首页
 		</div>
 		</Nav-bar>
-    <Better-scroll class="content" :probeType="2" :pullUpLoad="true">
+    <Better-scroll class="content"
+    :probeType="3"
+    :pullUpLoad="true"
+     ref="scroll"
+     @scroll="scroll"
+     @pullingUp="loadmore"
+     >
       <!--轮播图组件-->
       <homeswiper :banners="banners"></homeswiper>
       <!--热销产品推送组件-->
@@ -21,7 +27,7 @@
       	</a>
       </div> -->
     </Better-scroll>
-
+<Back-top @click.native="backclick" v-show="backtop"></Back-top>
 	</div>
 </template>
 
@@ -32,10 +38,11 @@
 	import RecommendView from './childComps/RecommendView'
 	import FeatureView from './childComps/FeatureView'
 	//公共的组件引用
-	import NavBar from '@/components/common/navbar/NavBar'
-  import BetterScroll from '@/components/common/BetterScroll/BetterScroll'
-	import tapControl from '@/components/content/tapControl/tapControl'
-  import GoodsList from '@/components/content/goods/GoodsList'
+	  import NavBar from '@/components/common/navbar/NavBar'
+    import BetterScroll from '@/components/common/BetterScroll/BetterScroll'
+  	import tapControl from '@/components/content/tapControl/tapControl'
+    import GoodsList from '@/components/content/goods/GoodsList'
+    import BackTop from '@/components/content/backtop/BackTop'
 	//引用的方法
 	import {getHomeMultidata,getHomeGoods} from 'network/home.js'
 
@@ -49,19 +56,20 @@
 	  NavBar,
 	  tapControl,
     GoodsList,
-    BetterScroll
+    BetterScroll,
+    BackTop
 	  },
 	  data(){
 	  	return{
 	  		banners:[],
 	  		recommends:[],
-	  		ceshi:[],
 	  		goods:{
 	  			'pop':{page:0,list:[]},
 	  			'new':{page:0,list:[]},
 	  			'sell':{page:0,list:[]},
 	  		},
         cutype:'pop',
+        backtop:false
 //	  		result:null
 	  	}
 	  },
@@ -94,9 +102,12 @@
 		   this.goods[type].page+=1
 	 	 })
 	 	 	},
+
       /**
        * 下面是事件监听代码
       **/
+
+      // 切换数据
     tabclick(index){
       switch(index){
         case 0:
@@ -110,6 +121,21 @@
         break
       }
     },
+    // 监听返回顶部组件事件
+    backclick(){
+      // this.$refs.scroll选中scroll组件来使用里面的scrollTo方法
+      this.$refs.scroll.scroll.scrollTo(0,0,500)
+    },
+    // 接受better scroll中的监听坐标数据 实现返回顶部show
+    scroll(position){
+    this.backtop = -position.y>1000
+    },
+    // 加载更多 调用getHomeGoods方法 cutype代表当前的类型
+    loadmore(){
+      this.getHomeGoods(this.cutype)
+      this.$refs.scroll.scroll.finishPullUp()
+    }
+
 	 }
 	}
 </script>
