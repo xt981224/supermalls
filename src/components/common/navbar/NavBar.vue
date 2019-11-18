@@ -17,11 +17,11 @@
 		/*background-color: red;*/
 		height: 44px;
 		box-shadow: 0 1px 1px rgba(100,100,100,0.1);
-		position: fixed;
+		/* position: fixed;
 		top: 0;
 		right: 0;
 		left: 0;
-		z-index: 1;
+		z-index: 1; */
 	}
 	.left,.right{
 		/*background-color: blue;*/

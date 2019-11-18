@@ -1,7 +1,7 @@
 <!-- 首页商品分类展示组件 -->
 <template>
   <div class="goods " >
-    <Goods-list-item v-for="item in goods" :goodsitem="item">
+    <Goods-list-item v-for="(item,index) in goods" :key="index" :goodsitem="item">
     </Goods-list-item>
 
   </div>

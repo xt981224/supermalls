@@ -1,7 +1,8 @@
 <!-- 首页产品展示小组件 -->
 <template>
   <div class="goods-item">
-    <img :src="goodsitem.show.img" />
+    <!-- @load监听图片加载 -->
+    <img :src="goodsitem.show.img" @load="imageload" />
     <div class="goods-info">
       <p>{{goodsitem.title}}</p>
       <span class="price">{{goodsitem.price}}</span>
@@ -20,6 +21,11 @@
         }
       }
     },
+    methods:{
+      imageload(){
+      this.$bus.$emit('itemimagesload')
+      }
+    }
 
   }
 

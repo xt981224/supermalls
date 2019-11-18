@@ -44,7 +44,8 @@
 		methods:{
 
 			itemClick(){
-				this.$router.push(this.path)
+        this.$router.currentRoute.path == this.path || this.$router.replace(this.path)
+				// this.$router.push(this.path)
 //				this.isactive=!this.isactive
 //console.log(this.$route.path)
 			},

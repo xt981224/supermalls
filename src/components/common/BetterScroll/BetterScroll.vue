@@ -30,6 +30,14 @@
         },
 
     },
+    methods:{
+      refresh(){
+        this.scroll.refresh()
+      },
+      getScrollY(){
+       return  this.scroll.y
+      }
+    },
  mounted(){
           // 1.滚动效果 创建scroll对象
           this.scroll =  new BScroll(this.$refs.wrapper,{
@@ -47,7 +55,9 @@
           this.scroll.on('pullingUp',()=>{
             this.$emit('pullingUp')
           })
+          //修改bug 重新计算可滚动区域的高度
         },
+
   }
 </script>
 
