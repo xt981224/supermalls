@@ -104,7 +104,7 @@
         //.获取tab control 的offsetTop属性
         // 所有组件都有有个$el 来获取组件的元素
         this.tabOffsetTop = this.$refs.tabOffsetTop.$el.offsetTop
-        console.log(this.tabOffsetTop)
+        // console.log(this.tabOffsetTop)
       },
       // 切换数据
     tabclick(index){

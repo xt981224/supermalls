@@ -5,7 +5,7 @@ const home =() =>import('views/home/home')
 const category =() =>import('views/category/category')
 const cart =() =>import('views/cart/cart')
 const porfile =() =>import('views/porfile/porfile')
-
+const Detail =() =>import('views/detail/Detail')
 //注册
 Vue.use(VueRouter)
 
@@ -31,7 +31,11 @@ const router  = new VueRouter({
       path: '/porfile',
       component:porfile
     },
-    
+    {
+      path:'/detail/:id',
+      component:Detail
+    }
+
   ],
 	mode:'history'
 })

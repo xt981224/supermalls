@@ -1,6 +1,6 @@
 <!-- 首页产品展示小组件 -->
 <template>
-  <div class="goods-item">
+  <div class="goods-item" @click="itemclick">
     <!-- @load监听图片加载 -->
     <img :src="goodsitem.show.img" @load="imageload" />
     <div class="goods-info">
@@ -24,6 +24,10 @@
     methods:{
       imageload(){
       this.$bus.$emit('itemimagesload')
+      },
+      itemclick(){
+        // console.log('详情页跳转')
+        this.$router.push('/detail/'+this.goodsitem.iid)
       }
     }
 
