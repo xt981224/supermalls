@@ -43,11 +43,11 @@
     import BetterScroll from '@/components/common/BetterScroll/BetterScroll'
   	import tapControl from '@/components/content/tapControl/tapControl'
     import GoodsList from '@/components/content/goods/GoodsList'
-    import BackTop from '@/components/content/backtop/BackTop'
 	//引用的方法
 	import {getHomeMultidata,getHomeGoods} from 'network/home.js'
 	// 防抖函数
   import {debounce} from '@/common/utils.js'
+  import {backtopmixin} from '@/common/mixin.js'
 	export default {
 	  name: 'home',
 	  components: {
@@ -59,8 +59,8 @@
 	  tapControl,
     GoodsList,
     BetterScroll,
-    BackTop,
 	  },
+    mixins:[backtopmixin],
 	  data(){
 	  	return{
 	  		banners:[],
@@ -89,7 +89,8 @@
    mounted(){
      // 1.图片加载完成后的事件监听
      const refresh = debounce(this.$refs.scroll.refresh,200)
-     this.$bus.$on('itemimagesload',()=>{
+     this.$bus.$on('homeitemimagesload',()=>{
+
      // this.$refs.scroll.scroll.refresh()
      refresh()
      })
@@ -138,6 +139,7 @@
     loadmore(){
       this.getHomeGoods(this.cutype)
       this.$refs.scroll.scroll.finishPullUp()
+      this.$refs.scroll.refresh()
     },
     /**
      * 下面是网络请求代码
@@ -164,13 +166,17 @@
 	 },
  activated(){
    // 进入的时候给固定的位置
- 		this.$refs.scroll.scroll.scrollTo(0,this.saceY)
+   console.log(this.saceY)
+ 		this.$refs.scroll.scroll.scrollTo(0,this.saceY,200)
     this.$refs.scroll.refresh()
  	},
  	//deactivated不活跃的时候只能在keep-alive有效
  	deactivated(){
     // 切换出去后给save赋值
  this.saceY = this.$refs.scroll.getScrollY()
+ // 2.取消全局事件监听
+ // this.$bus.$of
+ console.log( this.saceY)
  	},
 	}
 </script>

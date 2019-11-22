@@ -30,6 +30,7 @@
     methods:{
       titleclick(index){
         this.curryindex = index
+        this.$emit('titleclick',index)
       },
       backclick(){
         this.$router.back()

@@ -7,6 +7,14 @@ return request({
   }
 })
 }
+export function getRecommend(){
+return request({
+  url:'/recommend',
+  // params:{
+  //   iid
+  // }
+})
+}
 // 产品名称、价格。销量等数据。整合到里面
 // 创建一个类 然后导出
 export class Goods{

@@ -2,7 +2,7 @@
 <template>
   <div class="goods-item" @click="itemclick">
     <!-- @load监听图片加载 -->
-    <img :src="goodsitem.show.img" @load="imageload" />
+    <img :src="showimages" @load="imageload" />
     <div class="goods-info">
       <p>{{goodsitem.title}}</p>
       <span class="price">{{goodsitem.price}}</span>
@@ -23,11 +23,20 @@
     },
     methods:{
       imageload(){
-      this.$bus.$emit('itemimagesload')
+        if(this.$route.path.indexOf('/home')){
+          this.$bus.$emit('homeitemimagesload')
+        } else if(this.$route.path.indexOf('/detail')){
+          this.$bus.$emit('detailitemimagesload')
+        }
       },
       itemclick(){
         // console.log('详情页跳转')
         this.$router.push('/detail/'+this.goodsitem.iid)
+      }
+    },
+    computed:{
+      showimages(){
+        return this.goodsitem.image || this.goodsitem.show.img
       }
     }
 
