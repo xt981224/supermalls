@@ -33,7 +33,7 @@
 		},methods:{
 			itemclick(index){
 				this.cuarrindex=index;
-        this.$emit('tabclick',index)
+				this.$emit('tabclick',index)
 			}
 		}
 	}

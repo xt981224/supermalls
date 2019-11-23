@@ -22,6 +22,7 @@
         </Better-scroll>
         <Back-top @click.native="backclick" v-show="backtop"></Back-top>
         <detailbottombar @addCart="addCart"></detailbottombar>
+        <!-- <toast :message="toats" :isshow="isshow"></toast> -->
     </div>
 </template>
 <script>
@@ -38,6 +39,9 @@
   import {getDetail,Goods,Shop,GoodsParam,getRecommend} from '@/network/detail'
   import detailbottombar from './childComps/detailbottombar'
   import {backtopmixin} from '@/common/mixin.js'
+  import{ mapActions} from 'vuex'
+
+  // import toast from '@/components/common/toast/toast'
   export default {
     name:'Detail',
     components:{
@@ -50,7 +54,8 @@
      DetailParamInfo,
      DetailCommentInfo,
      GoodsList,
-     detailbottombar
+     detailbottombar,
+     // toast
     },
     mixins:[backtopmixin],
     data(){
@@ -65,7 +70,9 @@
         commends:[],//推荐数据
         themetopsY:[],
         gettop:null,
-        currentIndex:0
+        currentIndex:0,
+        toats:'',
+        isshow:false
       }
     },
     created() {
@@ -117,17 +124,29 @@
 
     },
     methods:{
+      ...mapActions({add:'addCart'}),
       // 加入购物车的点击
       addCart(){
-      // 1.获取购物车需要的信息
-      let  product = {}
+      //1.获取购物车需要的信息
+      let  product  = {}
       product.image = this.topImages[0]
       product.title = this.goods.title
       product.desc = this.goods.desc
       product.price = this.goods.realPrice
       product.iid = this.iid
       // console.log(product)
-      this.$store.dispatch('addCart',product)
+      this.add(product).then(res=>{
+        this.$toast.show(res,2000)
+        // this.isshow = true
+        // this.toats = res
+        // setTimeout(()=>{
+        // this.isshow = false
+        // this.toats = ''
+
+        // },1500)
+
+      })
+      // this.$store.dispatch('addCart',product)
       },
       // 图片加载完成监听
       imageLoad(){

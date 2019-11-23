@@ -10,6 +10,7 @@
       <!-- 商品列表展示 -->
       <cart-list></cart-list>
     </Better-scroll>
+    <Cart-bottom-bar></Cart-bottom-bar>
 	</div>
 </template>
 
@@ -17,11 +18,13 @@
 import BetterScroll from '@/components/common/BetterScroll/BetterScroll'
 import NavBar from '@/components/common/navbar/NavBar'
 import CartList from './childComps/CartList'
+import CartBottomBar from './childComps/CartBottomBar'
 import {mapGetters} from 'vuex'
 	export default{
 		name:'cart',
 		components:{
       BetterScroll,
+      CartBottomBar,
       NavBar,
       CartList
 		},
@@ -56,7 +59,7 @@ import {mapGetters} from 'vuex'
    overflow: hidden;
     position:absolute;
     top:44px;
-    bottom:49px;
+    bottom:89px;
     left:0;
     right:0;
   }

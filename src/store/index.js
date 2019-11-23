@@ -12,6 +12,7 @@ const store = new Vuex.Store({
     },
     addcart(state,payload){
       payload.count = 1
+      payload.checked = true
       state.cartList.push(payload)
     }
 
@@ -19,22 +20,26 @@ const store = new Vuex.Store({
   actions:{
     // 1.添加购物车
     addCart(context,payload){
-     // payload为新的商品
-    // let  oldpro = null;
-    let oldpro =context.state.cartList.find((item)=>{
-     return item.iid ===payload.iid
-    })
-      // for (let item of state.cartList) {
-      //   if(item.iid === payload.iid ){
-      //     // console.log("相同")
-      //     oldpro = item
-      //   }
-      // }
-      if(oldpro){
-        context.commit('addcount',oldpro)
-      }else{
-        context.commit('addcart',payload)
-      }
+    return new Promise((resolve,reject)=>{
+   // payload为新的商品
+   // let  oldpro = null;
+   let oldpro =context.state.cartList.find((item)=>{
+    return item.iid ===payload.iid
+   })
+     // for (let item of state.cartList) {
+     //   if(item.iid === payload.iid ){
+     //     // console.log("相同")
+     //     oldpro = item
+     //   }
+     // }
+     if(oldpro){
+       context.commit('addcount',oldpro)
+       resolve('数量加一')
+     }else{
+       context.commit('addcart',payload)
+       resolve('添加产品')
+     }
+ })
     }
   },
   getters:{

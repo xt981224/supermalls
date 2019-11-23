@@ -30,11 +30,12 @@
         default(){
           return {}
         }
-      }
-    },components:{
+      },
+    },
+    components:{
       CheckButton
     },
-   
+
     methods:{
         checkClick(){
          this.product.checked = !this.product.checked
